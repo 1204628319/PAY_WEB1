@@ -1,0 +1,19 @@
+.el-table th>.cell{
+  color: #333;
+
+}
+.el-table td .cell{
+  color: #333;
+}
+.el-table th{
+  background-color: rgb(231,235,239);
+}
+.aside-container{
+  padding: 10px;
+}
+.el-pagination{
+  text-align: center;
+}
+.el-table--striped .el-table__body tr.el-table__row--striped td{
+  background: #f5faff;
+}

@@ -1,0 +1,352 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+@import './common.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  margin-top: 30px;
+}
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  background: rgb(238, 241, 246);
+  border-radius: 5px;
+  padding: 20px 0px 10px 0;
+  .filter-item {
+    display: inline-block;
+    padding: 0 0 10px 0;
+    .filter-item-label{
+      color: #666;
+      font-size: 14px;
+      padding: 0;
+      display: inline-block;
+      width: 110px;
+      text-align: right;
+      white-space: nowrap;
+      margin-right: 8px;
+    }
+    .el-input{
+      width: 200px;
+    }
+    button{
+      span{
+        color: #fff;
+        // font-size: 12px;
+        display: inline;
+        margin: 0;
+      }
+    }
+    .el-select{
+      width: 200px;
+    }
+    .el-cascader{
+      width: 200px;
+    }
+    .head-input {
+      width: 200px;
+    }
+  }
+  .el-input__suffix-inner{
+    width: 25px !important;
+  }
+  .el-range-editor{
+    span{
+      width: auto;
+    }
+  }
+}
+.filter-no-span{
+  padding-left: 20px;
+}
+.filter-content-button{
+  margin-left: 15px;
+}
+.filter-button{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+.el-button--info{
+  background-color: #bfcbd9;
+  border-color: #bfcbd9;
+}
+.el-button--primary{
+  background-color: #3d91fa;
+  border: 0;
+}
+.margin_bottom10{
+  margin-bottom: 10px;
+}
+.table-border{
+  border: 1px solid #dcdfe6;
+}
+
+// 表格操作按钮样式
+.table-action-delete{
+  background: transparent !important;
+  border: 0;
+  font-size: 17px;
+  padding: 7px 8px;
+  color: #ff4949;
+  &:hover, &:focus, &:active{
+    color: #ff4949 !important;
+  }
+}
+.table-action-edit{
+  background: transparent !important;
+  border: 0;
+  font-size: 17px;
+  padding: 7px 8px;
+  color: #3d91fa;
+  &:hover, &:focus, &:active{
+    color: #3d91fa !important;
+  }
+}
+.table-action-reset{
+  background: transparent !important;
+  border: 0;
+  font-size: 17px;
+  padding: 7px 8px;
+  color: #FFBA00;
+  &:hover, &:focus, &:active{
+    color: #FFBA00 !important;
+  }
+}
+/* 图表样式 */
+.chart-content{
+  &-title{
+    margin: 20px 0 0 20px;
+    border-left: 4px solid rgb(61,145,250);
+    padding-left: 8px;
+    color: #333;
+    font-size: 16px;
+  }
+  &-title-no-margin{
+    margin: 20px 0 0 0;
+    border-left: 4px solid rgb(61,145,250);
+    padding-left: 8px;
+    color: #333;
+    font-size: 16px;
+  }
+  &-type{
+    margin-top: 10px; margin-left: 20px; text-align:left;
+  }
+  &-type-no-margin{
+    margin-top: 10px; text-align:left;
+  }
+  &-chart{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .no_data{
+      text-align: center;
+      p{
+        color: #666;
+        font-size: 14px;
+      }
+    }
+  }
+  &-table{
+    margin: 20px;
+    border: 1px solid #dcdfe6;
+  }
+}
+
+.el-select__tags {
+  white-space: nowrap;
+  display: inline-block;
+
+  .el-tag.el-tag--info.el-tag--small.el-tag--light{
+    max-width: 0.65rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .el-tag__close.el-icon-close{
+    position: sticky;
+  }
+}
+
+.help-doc {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background: rgba(139, 148, 171, 0.7);
+  padding: 20px 0 0;
+  z-index: 900;
+}

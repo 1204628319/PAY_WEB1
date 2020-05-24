@@ -1,0 +1,128 @@
+$main-color: #454B57;
+$nav-bar-backcolor: #C7E0EF;
+$main-active-color: #FFC837;
+$sub-main-color: #7C8698;
+$text-introduce: #878787;
+$common-border-color: rgba(0, 0, 0, 0.1);
+$main-background-color: #f6f6f6;
+@mixin border($pos,$color:$common-border-color,$border-width: 1px) {
+    @if $pos==none {
+        border: none;
+    }
+    @else if $pos==all {
+        border: $border-width solid $color;
+    }
+    @else {
+        border-#{$pos}: $border-width solid $color;
+    }
+}
+
+@mixin transition($transition...) {
+    -webkit-transition: transform .3s cubic-bezier(.645,.045,.355,1);
+    // transition: $transition;
+    transition: transform .3s cubic-bezier(.645,.045,.355,1);
+}
+
+@mixin transform($transform...) {
+    -webkit-transform: $transform;
+    transform: $transform;
+}
+
+@mixin display-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+@mixin flex-wrap {
+	flex-wrap: wrap;
+}
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+    -webkit-box-flex: $fg;
+    -webkit-flex: $fg $fs $fb;
+    flex: $fg $fs $fb;
+}
+
+@mixin justify-content($value: center) {
+    -webkit-justify-content: $value;
+    justify-content: $value;
+    @if $value==flex-start {
+        -webkit-box-pack: start;
+    }
+    @else if $value==flex-end {
+        -webkit-box-pack: end;
+    }
+    @else {
+        -webkit-box-pack: $value;
+    }
+}
+
+@mixin align-items($value: center) {
+    -webkit-align-items: $value;
+    align-items: $value;
+    @if $value==flex-start {
+        -webkit-box-align: start;
+    }
+    @else if $value==flex-end {
+        -webkit-box-align: end;
+    }
+    @else {
+        -webkit-box-align: $value;
+    }
+}
+
+@mixin align-self($value: center) {
+	-webkit-align-self: $value;
+    align-self: $value;
+    @if $value==flex-start {
+        -webkit-align-self: start;
+    }
+    @else if $value==flex-end {
+        -webkit-align-self: end;
+    }
+    @else {
+        -webkit-align-self: $value;
+    }
+}
+
+@mixin flex-direction($value: row) {
+    flex-direction: $value;
+    -webkit-flex-direction: $value;
+    @if $value==row-reverse {
+        -webkit-box-direction: reverse;
+        -webkit-box-orient: horizontal;
+    }
+    @else if $value==column {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+    }
+    @else if $value==column-reverse {
+        -webkit-box-direction: reverse;
+        -webkit-box-orient: vertical;
+    }
+    @else {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+    }
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin shandow($color1) {
+    box-shadow: 0px 5px 10px 0px rgba(00, 00, 00,0.1);
+}
